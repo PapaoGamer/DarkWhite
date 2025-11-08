@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  justify-content: center;  /* centraliza os cards */
+  flex-wrap: wrap;          /* faz quebrar linha quando faltar espaço */
+  gap: 20px;                /* espaço entre os cards */
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+   transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Sobe um pouco no hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Mais destaque no hover */
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.comprar {
+  background-color: #2ecc71;  /* verde padrão */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* suaviza a transição */
+}
+
+.comprar:hover {
+  background-color: #27ae60; /* verde mais escuro no hover */
+}
+
+button {
+  all: unset;
+  display: inline-block;
+}
