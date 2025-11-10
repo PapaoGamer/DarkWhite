@@ -248,3 +248,64 @@ h1 a:hover {
   transform: translateY(-3px);
   opacity: 0.9;
 }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+
+  /* Corrige o menu e a logo */
+  .navbar {
+    flex-direction: column; /* Empilha os elementos */
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .logo-area {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Links um embaixo do outro */
+    gap: 10px;
+  }
+
+  /* Reduz tamanho dos textos */
+  .logo-area h1 {
+    font-size: 18px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  /* Ajusta os cards */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%; /* Ocupa quase toda a tela no celular */
+    max-width: 350px;
+  }
+
+  /* Centraliza a logo fixa */
+  .logo-fixa {
+    top: 10px;
+    left: 10px;
+    width: 60px;
+  }
+
+  /* Ajusta margens gerais */
+  body {
+    padding-top: 120px; /* mais espaço pro menu empilhado */
+  }
+
+  /* Ajusta o rodapé / contatos */
+  .social-links {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+}
