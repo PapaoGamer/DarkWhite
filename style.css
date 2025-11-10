@@ -277,9 +277,13 @@ h1 a:hover {
   text-decoration: none;
   color: white;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
 
 .whatsapp-btn {
@@ -296,7 +300,20 @@ h1 a:hover {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .social-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .social-buttons a {
+    width: 150px;
+    justify-content: center;
+    padding: 10px 0;
+  }
+}
 
   .navbar {
     flex-direction: column;
@@ -348,7 +365,6 @@ h1 a:hover {
     margin-top: 60px;
     margin-bottom: 40px;
   }
-}
 
 @media (max-width: 400px) {
   .card {
