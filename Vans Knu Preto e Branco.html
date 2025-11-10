@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vans Knu - DarkWhite</title>
+  <link rel="stylesheet" href="style.css?v=1.1">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="DarkWhite Logo">
+      <h1><a href="index.html">DarkWhite</a></h1>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html#produtos">Produtos</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="index.html#redes">Redes Sociais</a>
+    </nav>
+  </header>
+
+  <!-- Produto -->
+  <main class="container">
+    <div class="card-galeria">
+  <div class="card-imagem">
+    <img class="imagem-principal" src="https://i.postimg.cc/05ChP49R/imagem-2025-11-10-010943204.png" alt="Vans Knu">
+  </div>
+  <div class="miniaturas">
+    <img src="https://i.postimg.cc/05ChP49R/imagem-2025-11-10-010943204.png" alt="Vans Knu" onclick="trocarImagem(this)">
+    <img src="https://i.postimg.cc/yxrPWcfr/imagem-2025-11-10-011103608.png" alt="Vans Knu" onclick="trocarImagem(this)">
+    <img src="https://i.postimg.cc/13FH5gDp/imagem-2025-11-10-011131739.png" alt="Vans Knu" onclick="trocarImagem(this)">
+  </div>
+  <h1>Vans Knu</h1>
+  <p>Cor: Branco e Preto</p>
+  <p>Tamanhos: 34 - 39</p>
+  <span class="preco">R$: 150,00</span>
+  <a href="pedido.html?produto=Nike+Dunk+Low" class="comprar">Comprar</a>
+</div>
+  </main>
+
+  <!-- Footer / redes sociais (opcional) -->
+  <section class="social-links" id="redes">
+    <h3>Redes Sociais</h3>
+    <div class="social-buttons">
+      <a href="https://wa.me/5547996626904" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+      <a href="https://instagram.com/paponeskate" target="_blank" class="instagram-btn">📸 Instagram</a>
+    </div>
+  </section>
+
+  <script>
+  // === Script do hambúrguer ===
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // === Script para trocar imagens dos cards ===
+  function trocarImagem(elemento) {
+    const card = elemento.closest('.card-galeria'); // permite vários cards
+    const imagemPrincipal = card.querySelector('.imagem-principal');
+    imagemPrincipal.src = elemento.src;
+  }
+</script>
+
+</body>
+</html>
