@@ -7,22 +7,39 @@
   <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 <body>
   <!-- Logo fixa -->
   <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="Logo da loja" class="logo-fixa">
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo-area">
-      <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="DarkWhite Logo">
-      <h1><a href="#home">DarkWhite</a></h1>
-    </div>
-    <nav class="nav-links">
-      <a href="#produtos">Produtos</a>
-      <a href="#contato">Contato</a>
-      <a href="#redes">Redes Sociais</a>
-    </nav>
-  </header>
+  <div class="logo-area">
+    <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="DarkWhite Logo">
+    <h1><a href="#home">DarkWhite</a></h1>
+  </div>
+
+  <!-- Botão do menu hambúrguer -->
+  <div class="hamburger" id="hamburger">
+    &#9776; <!-- ícone de hambúrguer -->
+  </div>
+
+  <!-- Links da navbar -->
+  <nav class="nav-links" id="nav-links">
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+    <a href="#redes">Redes Sociais</a>
+  </nav>
+</header>
+
 
   <!-- Textos principais (fora do container de produtos) -->
   <section class="intro" id="home">
