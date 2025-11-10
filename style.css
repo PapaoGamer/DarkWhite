@@ -1,14 +1,20 @@
+/* ===== CONFIGURAÇÕES GLOBAIS ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #8b8b8b;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   color: #333;
-  padding-top: 80px;
+  padding-top: calc(70px + 20px); /* altura da navbar + margem */
   overflow-x: hidden;
-  flex-wrap: wrap; 
+  display: flex;
   flex-direction: column;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -57,7 +63,7 @@ h1 a:hover {
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 40px;
+  padding: 0 20px;
 }
 
 .nav-links a {
@@ -72,6 +78,7 @@ h1 a:hover {
   transform: translateY(-3px);
 }
 
+/* ===== INTRODUÇÃO ===== */
 .intro {
   text-align: center;
   margin-top: 25px;
@@ -88,6 +95,7 @@ h1 a:hover {
   font-weight: normal;
 }
 
+/* ===== PRODUTOS ===== */
 .container {
   display: flex;
   justify-content: center;
@@ -132,6 +140,7 @@ h1 a:hover {
   background-color: #27ae60;
 }
 
+/* ===== LOGO FIXA ===== */
 .logo-fixa {
   position: fixed;
   top: 20px;
@@ -147,7 +156,7 @@ h1 a:hover {
   transform: scale(1.1);
 }
 
-/* === SEÇÃO DE CONTATO === */
+/* ===== CONTATO ===== */
 .contato {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -167,7 +176,7 @@ h1 a:hover {
   margin-bottom: 30px;
 }
 
-/* === FORMULÁRIO === */
+/* ===== FORMULÁRIO ===== */
 .contato-form {
   max-width: 500px;
   margin: 0 auto;
@@ -194,7 +203,6 @@ h1 a:hover {
   box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
 }
 
-/* === BOTÃO DE ENVIO === */
 .enviar {
   background-color: #2ecc71;
   color: white;
@@ -210,7 +218,7 @@ h1 a:hover {
   background-color: #27ae60;
 }
 
-/* === REDES SOCIAIS === */
+/* ===== REDES SOCIAIS ===== */
 .social-links {
   text-align: center;
   margin-top: 40px;
@@ -239,7 +247,7 @@ h1 a:hover {
 }
 
 .whatsapp-btn {
-  background-color: #25D366; /* verde do WhatsApp */
+  background-color: #25D366;
 }
 
 .instagram-btn {
@@ -254,13 +262,11 @@ h1 a:hover {
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
 
-  /* Corrige o menu e a logo */
   .navbar {
-    flex-direction: column; /* Empilha os elementos */
+    flex-direction: column;
     height: auto;
     padding: 10px 20px;
     text-align: center;
-    flex-direction: column;
   }
 
   .logo-area {
@@ -269,11 +275,10 @@ h1 a:hover {
   }
 
   .nav-links {
-    flex-direction: column; /* Links um embaixo do outro */
+    flex-direction: column;
     gap: 10px;
   }
 
-  /* Reduz tamanho dos textos */
   .logo-area h1 {
     font-size: 18px;
   }
@@ -282,7 +287,6 @@ h1 a:hover {
     font-size: 14px;
   }
 
-  /* Ajusta os cards */
   .container {
     flex-direction: column;
     align-items: center;
@@ -290,25 +294,33 @@ h1 a:hover {
   }
 
   .card {
-    width: 90%; /* Ocupa quase toda a tela no celular */
+    width: 90%;
     max-width: 350px;
   }
 
-  /* Centraliza a logo fixa */
   .logo-fixa {
     top: 10px;
     left: 10px;
     width: 60px;
   }
 
-  /* Ajusta margens gerais */
   body {
-    padding-top: 120px; /* mais espaço pro menu empilhado */
+    padding-top: calc(120px + 20px);
   }
 
-  /* Ajusta o rodapé / contatos */
   .social-links {
     margin-top: 60px;
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 95%;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
