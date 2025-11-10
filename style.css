@@ -267,6 +267,10 @@ h1 a:hover {
   opacity: 0.9;
 }
 
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
 
@@ -356,11 +360,13 @@ h1 a:hover {
     gap: 10px;
     width: auto;
     margin: 0 auto;
+    align-items: center;
   }
 
   .social-buttons a {
     width: 150px;
     justify-content: center;
     padding: 10px 0;
+    align-items: center;
   }
 }
