@@ -1,77 +1,10 @@
-.container {
-  display: flex;
-  justify-content: center;  /* centraliza os cards */
-  flex-wrap: wrap;          /* faz quebrar linha quando faltar espaço */
-  gap: 20px;                /* espaço entre os cards */
-  padding: 20px;
-}
-
-.card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-   transition: all 0.3s ease;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    /* Sobe um pouco no hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* Mais destaque no hover */
-}
-
 body {
-    background-color: #8b8b8b; 
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    color: #333;
-    padding-top: 80px;
-}
-
-
-.comprar {
-  background-color: #2ecc71;  /* verde padrão */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* suaviza a transição */
-}
-
-.comprar:hover {
-  background-color: #27ae60; /* verde mais escuro no hover */
-}
-
-button {
-  all: unset;
-  display: inline-block;
-}
-
-
-.logo-fixa {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 80px;
-  height: auto;
-  z-index: 1000;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.logo-fixa:hover {
-  transform: scale(1.1);
+  background-color: #8b8b8b;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #333;
+  padding-top: 80px;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -80,15 +13,15 @@ button {
   left: 0;
   width: 100%;
   height: 70px;
-  justify-content: flex-start;
-  padding: 0 40px;
-  background-color: #333; 
+  background-color: #333;
   color: white;
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  justify-content: flex-start;
+  padding: 0 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   z-index: 1000;
-} 
+}
 
 .logo-area {
   display: flex;
@@ -106,18 +39,171 @@ button {
   margin: 0;
 }
 
-  /* Links do menu */
-.nav-links a {
-  margin-left: auto; /* <-- empurra os links para a direita */
-  margin-right: 20px; /* <-- evita que o último link (Contato) cole na borda */
+h1 a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+h1 a:hover {
+  color: #ddd;
+  transform: translateY(-3px);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #ddd;
+  transform: translateY(-3px);
 }
 
+.intro {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.intro h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.comprar {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comprar:hover {
+  background-color: #27ae60;
+}
+
+.logo-fixa {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-fixa:hover {
+  transform: scale(1.1);
+}
+
+/* === SEÇÃO DE CONTATO === */
+.contato {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 3px solid #333;
+}
+
+.contato h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contato p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* === FORMULÁRIO === */
+.contato-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  resize: none;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+/* === BOTÃO DE ENVIO === */
+.enviar {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+  background-color: #27ae60;
+}

@@ -1,96 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DarkWhite</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkWhite</title>
+  <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 
 <body>
-    <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="Logo da loja" class="logo-fixa">
-    <h1>Olá, seja bem vindo a DarkWhite!</h1>
-    <h2>Uma loja com alta qualidade e baixos preços.</h2>
-    <header class="navbar">
+  <!-- Logo fixa -->
+  <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="Logo da loja" class="logo-fixa">
+
+  <!-- Navbar -->
+  <header class="navbar">
     <div class="logo-area">
       <img src="https://i.postimg.cc/Jzt7krS5/Chat-GPT-Image-9-de-nov-de-2025-21-28-35.png" alt="DarkWhite Logo">
-      <h1>DarkWhite</h1>
+      <h1><a href="#home">DarkWhite</a></h1>
     </div>
     <nav class="nav-links">
-      <a href="#home">Início</a>
       <a href="#produtos">Produtos</a>
-      <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
-    <main class="container">
-        <main class="container">
-            <div class="card">
-                <img src="https://i.imgur.com/27YuLWk.png" alt="Nike Dunk Low azul marinho">
-                <h2>Tenis Nike Dunk Low</h2>
-                <p>Tênis Nike</p>
-                <p>Modelo: Dunk Low</p>
-                <p>Cor: Azul marinho</p>
-                <p>Tamanho: 34 - 43</p>
-                <span class="preco">R$: 150,00</span>
-                <button class="comprar">Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://i.imgur.com/w85wOuy.png" alt="Nike Dunk Low marrom">
-                <h2>Nike Dunk Low</h2>
-                <p>Tênis Nike</p>
-                <p>Modelo: Dunk Low</p>
-                <p>Cor: marrom</p>
-                <p>Tamanho: 34 - 43</p>
-                <span class="preco">R$: 150,00</span>
-                <button class="comprar">Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://i.imgur.com/336ZKkT.png" alt="Nike Court Vision Vermelho Com Preto">
-                <h2>Nike Court Vision</h2>
-                <p>Tênis Nike </p>
-                <p> Modelo: Court Vision </p>
-                <p>Cor: Vermelho/Preto</p>
-                <p>Tamanho: 34 - 43</p>
-                <span class="preco">R$: 150,00</span>
-                <button class="comprar">Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://i.imgur.com/j8jjdgQ.png" alt="Vans Knu Cinza">
-                <h2>Vans Knu</h2>
-                <p>Tênis Vans</p>
-                <p>Modelo: Vans Knu</p>
-                <p>Cor:Bege</p>
-                <p>Tamanho:34 - 43</p>
-                <span class="preco">R$: 150,00</span>
-                <button class="comprar">Comprar</button>
-            </div>
 
-            <div class="card">
-                <img src="https://i.imgur.com/e89a8GL.png" alt="Vans Knu Preto e Branco">
-                <h2>Vans Knu</h2>
-                <p>Tênis Vans</p>
-                <p>Modelo: Vans Knu</p>
-                <p>Cor: Preto e Branco</p>
-                <p>Tamanho: 34 - 39</p>
-                <span class="preco">R$: 150,00</span>
-                <button class="comprar">Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://i.imgur.com/tecY4w4.png" alt="Nike Jordan Low Branco/Preto/Cinza">
-                <h2>Jordan Low</h2>
-                <p>Tênis Nike</p>
-                <p>Modelo: Jordan Low</p>
-                <p>Cor: Preto/Branco e Cinza</p>
-                <p>Tamanho: 34 - 43</p>
-                <span class="preco">R$: 150,00</span>
-                <button class="comprar">Comprar</button>
-            </div>
-        </main>
+  <!-- Textos principais (fora do container de produtos) -->
+  <section class="intro">
+    <h1>Olá, seja bem-vindo à DarkWhite!</h1>
+    <h2>Uma loja com alta qualidade e baixos preços.</h2>
+  </section>
 
+  <!-- Produtos -->
+  <main class="container" id="produtos">
+    <div class="card">
+      <img src="https://i.imgur.com/27YuLWk.png" alt="Nike Dunk Low azul marinho">
+      <h2>Tênis Nike Dunk Low</h2>
+      <p>Tênis Nike</p>
+      <p>Modelo: Dunk Low</p>
+      <p>Cor: Azul marinho</p>
+      <p>Tamanho: 34 - 43</p>
+      <span class="preco">R$: 150,00</span>
+      <button class="comprar">Comprar</button>
+    </div>
 
+    <div class="card">
+      <img src="https://i.imgur.com/w85wOuy.png" alt="Nike Dunk Low marrom">
+      <h2>Nike Dunk Low</h2>
+      <p>Tênis Nike</p>
+      <p>Modelo: Dunk Low</p>
+      <p>Cor: Marrom</p>
+      <p>Tamanho: 34 - 43</p>
+      <span class="preco">R$: 150,00</span>
+      <button class="comprar">Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/336ZKkT.png" alt="Nike Court Vision Vermelho com Preto">
+      <h2>Nike Court Vision</h2>
+      <p>Tênis Nike</p>
+      <p>Modelo: Court Vision</p>
+      <p>Cor: Vermelho/Preto</p>
+      <p>Tamanho: 34 - 43</p>
+      <span class="preco">R$: 150,00</span>
+      <button class="comprar">Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/j8jjdgQ.png" alt="Vans Knu Cinza">
+      <h2>Vans Knu</h2>
+      <p>Tênis Vans</p>
+      <p>Modelo: Vans Knu</p>
+      <p>Cor: Bege</p>
+      <p>Tamanho: 34 - 43</p>
+      <span class="preco">R$: 150,00</span>
+      <button class="comprar">Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/e89a8GL.png" alt="Vans Knu Preto e Branco">
+      <h2>Vans Knu</h2>
+      <p>Tênis Vans</p>
+      <p>Modelo: Vans Knu</p>
+      <p>Cor: Preto e Branco</p>
+      <p>Tamanho: 34 - 39</p>
+      <span class="preco">R$: 150,00</span>
+      <button class="comprar">Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/tecY4w4.png" alt="Nike Jordan Low Branco/Preto/Cinza">
+      <h2>Jordan Low</h2>
+      <p>Tênis Nike</p>
+      <p>Modelo: Jordan Low</p>
+      <p>Cor: Preto/Branco e Cinza</p>
+      <p>Tamanho: 34 - 43</p>
+      <span class="preco">R$: 150,00</span>
+      <button class="comprar">Comprar</button>
+    </div>
+  </main>
+  <!-- Seção de Contato -->
+<section id="contato" class="contato">
+  <h2>Entre em Contato</h2>
+  <p>Tem alguma dúvida ou quer fazer um pedido personalizado? Fale com a gente!</p>
+  
+  <form class="contato-form" action="https://formsubmit.co/angelo.miguel.oliveira2007@gmail.com" method="POST">
+  <!-- Proteções básicas -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://papaogamer.github.io/DarkWhite/obrigado.html">
+
+  <input type="text" name="nome" placeholder="Seu nome" required>
+  <input type="email" name="email" placeholder="Seu e-mail" required>
+  <textarea name="mensagem" placeholder="Sua mensagem" rows="4" required></textarea>
+  <button type="submit" class="enviar">Enviar Mensagem</button>
+</form>
+
+</section>
 
 </body>
-
 </html>
