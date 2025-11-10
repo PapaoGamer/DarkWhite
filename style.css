@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  justify-content: center;  /* centraliza os cards */
+  flex-wrap: wrap;          /* faz quebrar linha quando faltar espaço */
+  gap: 20px;                /* espaço entre os cards */
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+   transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Sobe um pouco no hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Mais destaque no hover */
+}
+
+body {
+    background-color: #8b8b8b; 
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: #333;
+    padding-top: 80px;
+}
+
+
+.comprar {
+  background-color: #2ecc71;  /* verde padrão */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* suaviza a transição */
+}
+
+.comprar:hover {
+  background-color: #27ae60; /* verde mais escuro no hover */
+}
+
+button {
+  all: unset;
+  display: inline-block;
+}
+
+
+.logo-fixa {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-fixa:hover {
+  transform: scale(1.1);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  justify-content: flex-start;
+  padding: 0 40px;
+  background-color: #333; 
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  z-index: 1000;
+} 
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-area img {
+  height: 45px;
+}
+
+.logo-area h1 {
+  font-size: 22px;
+  color: white;
+  margin: 0;
+}
+
+  /* Links do menu */
+.nav-links a {
+  margin-left: auto; /* <-- empurra os links para a direita */
+  margin-right: 20px; /* <-- evita que o último link (Contato) cole na borda */
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ddd;
+}
+
