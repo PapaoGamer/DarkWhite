@@ -5,6 +5,8 @@ body {
   color: #333;
   padding-top: 80px;
   overflow-x: hidden;
+  flex-wrap: wrap; 
+  flex-direction: column;
 }
 
 .navbar {
@@ -258,6 +260,7 @@ h1 a:hover {
     height: auto;
     padding: 10px 20px;
     text-align: center;
+    flex-direction: column;
   }
 
   .logo-area {
