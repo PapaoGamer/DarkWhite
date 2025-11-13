@@ -1,4 +1,4 @@
-# ⚫ DarkWhite
+# DarkWhite
 
 Bem-vindo ao **DarkWhite**, um projeto desenvolvido de maneira solo, na criação de uma loja. 
 Aqui você encontrará a fusão entre **luz e escuridão**, um universo onde cada detalhe importa. 🌑✨
@@ -6,4 +6,5 @@ Aqui você encontrará a fusão entre **luz e escuridão**, um universo onde cad
 Espero que goste!
 
 Link: https://papaogamer.github.io/DarkWhite/index.html
+
 
