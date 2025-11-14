@@ -119,47 +119,81 @@ h1 a:hover {
 
 /* ===== PRODUTOS ===== */
 .container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  justify-items: center;
+  background: #7e7e7e; /* cor leve pra separar do fundo */
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 1000px;
 }
 
+
 .card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 250px;
+  background-color: #fff;
+  border: none;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  transition: all 0.25s ease;
 }
 
 .card img {
   width: 100%;
+  height: auto; /* mantém proporção original */
   border-radius: 10px;
+  object-fit: contain; /* garante que a imagem inteira apareça */
+  background-color: #fff; /* adiciona fundo branco para imagens menores */
 }
 
+
+
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.card p {
+  margin: 3px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.preco {
+  display: block;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #27ae60;
 }
 
 .comprar {
-  background-color: #2ecc71;
-  color: white;
+  display: inline-block;
+  background-color: #27ae60;
+  color: #fff;
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
+
 .comprar:hover {
-  background-color: #27ae60;
+  background-color: #219150;
 }
 
 /* ===== CONTATO ===== */
@@ -304,24 +338,188 @@ h1 a:hover {
   border: 2px solid #2ecc71;
 }
 
-.comprar {
-  background-color: #2ecc71;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
+.carrinho {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.comprar:hover {
+.carrinho h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#lista-carrinho {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-carrinho li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.resumo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#cupom {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3e9144;
+}
+
+.botao-carrinho {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.botao-carrinho:hover {
+  background: #3e9144;
+}
+
+.container-carrinho {
+  max-width: 800px;
+  margin: 120px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.container-carrinho h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.item-carrinho img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-carrinho button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.item-carrinho button:hover {
+  background: #c0392b;
+}
+
+.carrinho-total {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.carrinho-total input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.carrinho-total button {
+  margin-left: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2ecc71;
+  color: white;
+  cursor: pointer;
+}
+
+.carrinho-total button:hover {
   background-color: #27ae60;
 }
 
+.mensagem-carrinho {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px);
+  z-index: 9999;
+}
 
+.mensagem-carrinho.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TOAST: mensagens temporárias */
+.mensagem-toast {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #e74c3c; /* padrão: vermelho (erro) */
+  color: white;
+  padding: 18px 26px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  z-index: 9999;
+  max-width: 90%;
+  line-height: 1.2;
+}
+
+.mensagem-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* cores extras (aplicadas dinamicamente via JS) */
+.mensagem-toast.sucesso { background-color: #27ae60; }
+.mensagem-toast.erro { background-color: #e74c3c; }
+.mensagem-toast.neutro { background-color: #555; }
 
 
 /* ---------------------------------------------------------------------------------------------------------------- */
@@ -375,11 +573,14 @@ h1 a:hover {
   }
 
   /* CONTEÚDO E CARDS */
-  .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* apenas 1 card por linha */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
 
   .card {
     width: 90%;
