@@ -4,105 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrinho - DarkWhite</title>
-  <link rel="stylesheet" href="style.css?v=1.1">
-
-  <style>
-    body {
-      background-color: #8b8b8b; /* mesmo fundo da loja */
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding-top: 120px; /* espaço para a navbar fixa */
-    }
-
-    .carrinho {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    .carrinho h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-      gap: 10px;
-    }
-
-    .item img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .item button {
-      background: none;
-      border: none;
-      color: red;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    .cupons {
-      margin-top: 15px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .cupons input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .cupons button {
-      padding: 10px 15px;
-      border: none;
-      background: #4CAF50;
-      color: #fff;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .cupons button:hover {
-      background: #45a049;
-    }
-
-    .resumo {
-      text-align: right;
-      margin-top: 20px;
-    }
-
-    .finalizar {
-      margin-top: 20px;
-      width: 100%;
-      padding: 12px;
-      background: #25D366;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .finalizar:hover {
-      background: #1ebe5b;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
 
@@ -124,13 +27,13 @@
   </header>
 
   <!-- CONTEÚDO PRINCIPAL -->
-  <div class="carrinho">
+  <main class="carrinho">
     <h2>🛒 Seu Carrinho</h2>
     <div id="itens-carrinho"></div>
 
     <div class="cupons">
       <input type="text" id="cupom" placeholder="Digite seu cupom">
-      <button onclick="aplicarCupom()">Aplicar</button>
+      <button id="aplicar-cupom">Aplicar</button>
     </div>
 
     <div class="resumo">
@@ -139,165 +42,12 @@
       <h3 id="total">Total: R$ 0,00</h3>
     </div>
 
-    <button class="finalizar" onclick="finalizarCompra()">Finalizar Compra no WhatsApp</button>
+    <button class="finalizar" id="finalizar">Finalizar Compra no WhatsApp</button>
+  </main>
 
-    <div id="mensagem-toast" class="mensagem-toast" aria-live="polite"></div>
+  <div id="mensagem-toast" class="mensagem-toast"></div>
 
-  </div>
-
-  <script>
-    // MENU MOBILE
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // CARRINHO
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    let cupomAtivo = null;
-    let porcentagemDesconto = 0;
-
-    const cuponsValidos = {
-      'DESCONTO10': 10,
-      'PROMO25': 25,
-      'BLACK50': 50
-    };
-
-    function atualizarCarrinho() {
-      const container = document.getElementById('itens-carrinho');
-      container.innerHTML = '';
-
-      let subtotal = 0;
-      carrinho.forEach((item, i) => {
-        subtotal += item.preco;
-        container.innerHTML += `
-          <div class="item">
-            <img src="${item.imagem}">
-            <span>${item.nome}</span>
-            <strong>R$ ${item.preco.toFixed(2)}</strong>
-            <button onclick="removerItem(${i})">❌</button>
-          </div>
-        `;
-      });
-
-      // Calcula desconto (%)
-      let desconto = subtotal * (porcentagemDesconto / 100);
-      let total = subtotal - desconto;
-      if (total < 0) total = 0;
-
-      document.getElementById('subtotal').textContent = `Subtotal: R$ ${subtotal.toFixed(2)}`;
-      if (porcentagemDesconto > 0) {
-        document.getElementById('desconto').textContent = `Cupom "${cupomAtivo}" aplicado: -${porcentagemDesconto}% (-R$ ${desconto.toFixed(2)})`;
-      } else {
-        document.getElementById('desconto').textContent = '';
-      }
-      document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
-    }
-
-    function aplicarCupom() {
-      const codigo = document.getElementById('cupom').value.trim().toUpperCase();
-      const desconto = cuponsValidos[codigo];
-
-      if (desconto) {
-        cupomAtivo = codigo;
-        porcentagemDesconto = desconto;
-        mostrarMensagem(`Cupom "${codigo}" aplicado! (${desconto}% de desconto)`, 'sucesso', 3500);
-      } else {
-        cupomAtivo = null;
-        porcentagemDesconto = 0;
-mostrarMensagem('Cupom inválido. Tente outro.', 'erro', 4000);      }
-
-      atualizarCarrinho();
-    }
-
-    function removerItem(index) {
-      carrinho.splice(index, 1);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      atualizarCarrinho();
-    }
-
-    function finalizarCompra() {
-      if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-      }
-
-      let mensagem = "🛒 *Resumo do Pedido:*\n\n";
-      let subtotal = 0;
-
-      carrinho.forEach((item, i) => {
-        mensagem += `${i + 1}. ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
-        subtotal += item.preco;
-      });
-
-      let desconto = subtotal * (porcentagemDesconto / 100);
-      let total = subtotal - desconto;
-      if (total < 0) total = 0;
-
-      mensagem += `\n💰 *Subtotal:* R$ ${subtotal.toFixed(2)}\n`;
-      if (cupomAtivo) {
-        mensagem += `🎟️ *Cupom:* ${cupomAtivo} (-${porcentagemDesconto}% = -R$ ${desconto.toFixed(2)})\n`;
-      }
-      mensagem += `💵 *Total:* R$ ${total.toFixed(2)}\n\n`;
-      mensagem += "✅ Envie este pedido para confirmar!";
-
-      const numero = "5547996626904"; // Seu WhatsApp
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-      window.open(url, "_blank");
-    }
-
-    atualizarCarrinho();
-
-function mostrarMensagem(texto, tipo = 'erro') {
-  const msg = document.getElementById('mensagem-toast');
-
-  msg.textContent = texto;
-
-  // Define a cor de fundo conforme o tipo
-  if (tipo === 'erro') {
-    msg.style.backgroundColor = '#e74c3c'; // Vermelho
-  } else if (tipo === 'sucesso') {
-    msg.style.backgroundColor = '#27ae60'; // Verde
-  } else {
-    msg.style.backgroundColor = '#555'; // Neutro
-  }
-
-  msg.classList.add('show');
-
-  // Remove após 3 segundos
-  setTimeout(() => {
-    msg.classList.remove('show');
-  }, 3000);
-}
-
-/**
- * mostrarMensagem(texto, tipo, duracao)
- * tipo: 'erro' | 'sucesso' | 'neutro'
- * duracao:ms (opcional) - default 3000
- */
-function mostrarMensagem(texto, tipo = 'erro', duracao = 3000) {
-  const msg = document.getElementById('mensagem-toast');
-  if (!msg) return;
-
-  msg.textContent = texto;
-
-  // remove classes antigas e aplica a nova (para cor)
-  msg.classList.remove('show', 'sucesso', 'erro', 'neutro');
-  msg.classList.add(tipo);
-  // se quiser sempre usar erro por padrão, já foi setado no CSS
-
-  // mostrar
-  msg.classList.add('show');
-
-  // remover após tempo
-  clearTimeout(msg._timeoutId);
-  msg._timeoutId = setTimeout(() => {
-    msg.classList.remove('show');
-  }, duracao);
-}
-
-  </script>
-
+  <!-- Inclui o script unificado -->
+  <script src="scripts.js"></script>
 </body>
 </html>
