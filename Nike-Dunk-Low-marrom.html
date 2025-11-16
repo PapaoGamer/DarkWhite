@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nike Dunk Low - DarkWhite</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="produtos.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -28,37 +30,44 @@
     </nav>
   </header>
 
-<main class="produto-pagina">
-  <div class="card-fundo">
-    <div class="card-galeria">
+  <main class="produto-pagina">
+    <div class="card-fundo">
+      <div class="card-galeria">
 
-      <!-- Imagem principal -->
-      <div class="card-imagem">
-        <img id="imagem-principal" src="https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png" alt="Nike Dunk Low Marrom">
-      </div>
+        <button class="voltar"
+          onclick="if(history.length>1){ history.back(); } else { window.location.href='../index.html'; }"
+          aria-label="Voltar à página anterior">← Voltar</button>
 
-      <!-- Miniaturas -->
-      <div class="miniaturas">
-        <img src="https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png" alt="mini1" onclick="trocarImagem(this.src)">
-        <img src="https://i.postimg.cc/v8XCK3q3/imagem-2025-11-15-225601356.png" alt="mini2" onclick="trocarImagem(this.src)">
-        <img src="https://i.postimg.cc/63t1jvCF/imagem-2025-11-15-225646214.png" alt="mini3" onclick="trocarImagem(this.src)">
-      </div>
+        <div class="card-imagem">
+          <img id="imagem-principal" src="https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png"
+            alt="Nike Dunk Low Marrom">
+        </div>
 
-      <!-- Informações -->
-      <h1>Nike Dunk Low</h1>
-      <p>Cor: Marrom</p>
-      <p>Tamanhos: 34 - 43</p>
-      <span class="preco">R$: 150,00</span>
+        <!-- Miniaturas -->
+        <div class="miniaturas">
+          <img src="https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png" alt="mini1"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/v8XCK3q3/imagem-2025-11-15-225601356.png" alt="mini2"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/63t1jvCF/imagem-2025-11-15-225646214.png" alt="mini3"
+            onclick="trocarImagem(this.src)">
+        </div>
 
-      <!-- Botão -->
-      <button class="comprar"
-        onclick="adicionarAoCarrinho('Nike Dunk Low Marrom',150.00,'https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png')">
-        🛒 Adicionar ao Carrinho
-      </button>
+        <!-- Informações -->
+        <h1>Nike Dunk Low</h1>
+        <p>Cor: Marrom</p>
+        <p>Tamanhos: 34 - 43</p>
+        <span class="preco">R$: 150,00</span>
 
-    </div> <!-- .card-galeria -->
-  </div> <!-- .card-fundo -->
-</main>
+        <!-- Botão -->
+        <button class="comprar"
+          onclick="adicionarAoCarrinho('Nike Dunk Low Marrom',150.00,'https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png')">
+          🛒 Adicionar ao Carrinho
+        </button>
+
+      </div> <!-- .card-galeria -->
+    </div> <!-- .card-fundo -->
+  </main>
 
 
 
@@ -71,8 +80,9 @@
     </div>
   </section>
 
-   <div id="mensagem-toast" class="mensagem-toast"></div>
+  <div id="mensagem-toast" class="mensagem-toast"></div>
 
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
+
 </html>

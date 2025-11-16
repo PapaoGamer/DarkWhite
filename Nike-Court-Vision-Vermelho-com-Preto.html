@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="produtos.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -33,18 +35,24 @@
     <div class="card-fundo">
       <div class="card-galeria">
 
-        <button class="voltar" onclick="if(history.length>1){ history.back(); } else { window.location.href='../index.html'; }" aria-label="Voltar à página anterior">← Voltar</button>
+        <button class="voltar"
+          onclick="if(history.length>1){ history.back(); } else { window.location.href='../index.html'; }"
+          aria-label="Voltar à página anterior">← Voltar</button>
 
         <!-- Imagem principal -->
         <div class="card-imagem">
-          <img id="imagem-principal" src="https://i.postimg.cc/LXP6TG32/imagem-2025-11-15-225117840.png" alt="Nike Court Vision Vermelho">
+          <img id="imagem-principal" src="https://i.postimg.cc/LXP6TG32/imagem-2025-11-15-225117840.png"
+            alt="Nike Court Vision Vermelho">
         </div>
 
         <!-- Miniaturas -->
         <div class="miniaturas">
-          <img src="https://i.postimg.cc/LXP6TG32/imagem-2025-11-15-225117840.png" alt="mini1" onclick="trocarImagem(this.src)">
-          <img src="https://i.postimg.cc/ZK4K879X/imagem-2025-11-15-225156183.png" alt="mini2" onclick="trocarImagem(this.src)">
-          <img src="https://i.postimg.cc/yNgV125c/imagem-2025-11-15-225223833.png" alt="mini3" onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/LXP6TG32/imagem-2025-11-15-225117840.png" alt="mini1"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/ZK4K879X/imagem-2025-11-15-225156183.png" alt="mini2"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/yNgV125c/imagem-2025-11-15-225223833.png" alt="mini3"
+            onclick="trocarImagem(this.src)">
         </div>
 
         <!-- Informações -->
@@ -77,4 +85,5 @@
   <!-- ================= SCRIPTS ================= -->
   <script src="scripts.js"></script>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nike Dunk Low - DarkWhite</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="produtos.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -29,38 +31,45 @@
   </header>
 
 
-  
-<main class="produto-pagina">
-  <div class="card-fundo">
-    <div class="card-galeria">
 
-      <!-- Imagem principal -->
-      <div class="card-imagem">
-        <img id="imagem-principal" src="https://i.postimg.cc/sXTKT0j9/imagem-2025-11-15-225819150.png" alt="Nike Dunk Low Panda">
-      </div>
+  <main class="produto-pagina">
+    <div class="card-fundo">
+      <div class="card-galeria">
 
-      <!-- Miniaturas -->
-      <div class="miniaturas">
-        <img src="https://i.postimg.cc/sXTKT0j9/imagem-2025-11-15-225819150.png" alt="mini1" onclick="trocarImagem(this.src)">
-        <img src="https://i.postimg.cc/BQLNCgd6/imagem-2025-11-15-225856260.png" alt="mini2" onclick="trocarImagem(this.src)">
-        <img src="https://i.postimg.cc/wjDVCBxY/imagem-2025-11-15-225927598.png" alt="mini3" onclick="trocarImagem(this.src)">
-      </div>
+        <button class="voltar"
+          onclick="if(history.length>1){ history.back(); } else { window.location.href='../index.html'; }"
+          aria-label="Voltar à página anterior">← Voltar</button>
 
-      <!-- Informações -->
-      <h1>Nike Dunk Low</h1>
-      <p>Cor: Branco e Preto</p>
-      <p>Tamanhos: 34 - 43</p>
-      <span class="preco">R$: 150,00</span>
+        <div class="card-imagem">
+          <img id="imagem-principal" src="https://i.postimg.cc/sXTKT0j9/imagem-2025-11-15-225819150.png"
+            alt="Nike Dunk Low Panda">
+        </div>
 
-      <!-- Botão -->
-      <button class="comprar"
-        onclick="adicionarAoCarrinho('Nike Dunk Low Panda',150.00,'https://i.postimg.cc/gJtqVXsq/imagem-2025-11-15-230026021.png')">
-        🛒 Adicionar ao Carrinho
-      </button>
+        <!-- Miniaturas -->
+        <div class="miniaturas">
+          <img src="https://i.postimg.cc/sXTKT0j9/imagem-2025-11-15-225819150.png" alt="mini1"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/BQLNCgd6/imagem-2025-11-15-225856260.png" alt="mini2"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/wjDVCBxY/imagem-2025-11-15-225927598.png" alt="mini3"
+            onclick="trocarImagem(this.src)">
+        </div>
 
-    </div> <!-- .card-galeria -->
-  </div> <!-- .card-fundo -->
-</main>
+        <!-- Informações -->
+        <h1>Nike Dunk Low</h1>
+        <p>Cor: Branco e Preto</p>
+        <p>Tamanhos: 34 - 43</p>
+        <span class="preco">R$: 150,00</span>
+
+        <!-- Botão -->
+        <button class="comprar"
+          onclick="adicionarAoCarrinho('Nike Dunk Low Panda',150.00,'https://i.postimg.cc/gJtqVXsq/imagem-2025-11-15-230026021.png')">
+          🛒 Adicionar ao Carrinho
+        </button>
+
+      </div> <!-- .card-galeria -->
+    </div> <!-- .card-fundo -->
+  </main>
 
 
 
@@ -73,8 +82,9 @@
     </div>
   </section>
 
-   <div id="mensagem-toast" class="mensagem-toast"></div>
+  <div id="mensagem-toast" class="mensagem-toast"></div>
 
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
+
 </html>

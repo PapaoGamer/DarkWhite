@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vans Ultrange vr3 - DarkWhite</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="produtos.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -29,38 +31,45 @@
   </header>
 
 
-  
-<main class="produto-pagina">
-  <div class="card-fundo">
-    <div class="card-galeria">
 
-      <!-- Imagem principal -->
-      <div class="card-imagem">
-        <img id="imagem-principal" src="https://i.postimg.cc/TYcdPVP3/imagem-2025-11-15-232910614.png" alt="Vans ultrange vr3 bege">
-      </div>
+  <main class="produto-pagina">
+    <div class="card-fundo">
+      <div class="card-galeria">
 
-      <!-- Miniaturas -->
-      <div class="miniaturas">
-        <img src="https://i.postimg.cc/TYcdPVP3/imagem-2025-11-15-232910614.png" alt="mini1" onclick="trocarImagem(this.src)">
-        <img src="https://i.postimg.cc/Zn4kkQpJ/imagem-2025-11-15-233044693.png" alt="mini2" onclick="trocarImagem(this.src)">
-        <img src="https://i.postimg.cc/kXMrfknM/imagem-2025-11-15-233112618.png" alt="mini3" onclick="trocarImagem(this.src)">
-      </div>
+        <button class="voltar"
+          onclick="if(history.length>1){ history.back(); } else { window.location.href='../index.html'; }"
+          aria-label="Voltar à página anterior">← Voltar</button>
 
-      <!-- Informações -->
-      <h1>Vans ultrange vr3</h1>
-      <p>Cor: Branco, Rosa e Bege</p>
-      <p>Tamanhos: 34 - 39</p>
-      <span class="preco">R$: 150,00</span>
+        <div class="card-imagem">
+          <img id="imagem-principal" src="https://i.postimg.cc/TYcdPVP3/imagem-2025-11-15-232910614.png"
+            alt="Vans ultrange vr3 bege">
+        </div>
 
-      <!-- Botão -->
-      <button class="comprar"
-        onclick="adicionarAoCarrinho('Vans ultrange vr3',150.00,'https://i.postimg.cc/TYcdPVP3/imagem-2025-11-15-232910614.png')">
-        🛒 Adicionar ao Carrinho
-      </button>
+        <!-- Miniaturas -->
+        <div class="miniaturas">
+          <img src="https://i.postimg.cc/TYcdPVP3/imagem-2025-11-15-232910614.png" alt="mini1"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/Zn4kkQpJ/imagem-2025-11-15-233044693.png" alt="mini2"
+            onclick="trocarImagem(this.src)">
+          <img src="https://i.postimg.cc/kXMrfknM/imagem-2025-11-15-233112618.png" alt="mini3"
+            onclick="trocarImagem(this.src)">
+        </div>
 
-    </div> <!-- .card-galeria -->
-  </div> <!-- .card-fundo -->
-</main>
+        <!-- Informações -->
+        <h1>Vans ultrange vr3</h1>
+        <p>Cor: Branco, Rosa e Bege</p>
+        <p>Tamanhos: 34 - 39</p>
+        <span class="preco">R$: 150,00</span>
+
+        <!-- Botão -->
+        <button class="comprar"
+          onclick="adicionarAoCarrinho('Vans ultrange vr3',150.00,'https://i.postimg.cc/TYcdPVP3/imagem-2025-11-15-232910614.png')">
+          🛒 Adicionar ao Carrinho
+        </button>
+
+      </div> <!-- .card-galeria -->
+    </div> <!-- .card-fundo -->
+  </main>
 
 
 
@@ -73,8 +82,9 @@
     </div>
   </section>
 
-   <div id="mensagem-toast" class="mensagem-toast"></div>
+  <div id="mensagem-toast" class="mensagem-toast"></div>
 
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
+
 </html>

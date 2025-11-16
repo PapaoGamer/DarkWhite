@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="produtos.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -31,8 +33,15 @@
   <main class="produto-pagina">
     <div class="card-fundo">
       <div class="card-galeria">
+
+        <button class="voltar"
+          onclick="if(history.length>1){ history.back(); } else { window.location.href='../index.html'; }"
+          aria-label="Voltar à página anterior">← Voltar</button>
+
+
         <div class="card-imagem">
-          <img id="imagem-principal" src="https://i.postimg.cc/j5xrtYn7/imagem-2025-11-10-004947296.png" alt="Nike Dunk Low">
+          <img id="imagem-principal" src="https://i.postimg.cc/j5xrtYn7/imagem-2025-11-10-004947296.png"
+            alt="Nike Dunk Low">
         </div>
 
         <div class="miniaturas">
@@ -46,7 +55,8 @@
         <p>Tamanhos: 34 - 43</p>
         <span class="preco">R$: 150,00</span>
 
-        <button class="comprar" onclick="adicionarAoCarrinho('Nike Dunk Low Azul', 150, 'https://i.postimg.cc/j5xrtYn7/imagem-2025-11-10-004947296.png')">
+        <button class="comprar"
+          onclick="adicionarAoCarrinho('Nike Dunk Low Azul', 150, 'https://i.postimg.cc/j5xrtYn7/imagem-2025-11-10-004947296.png')">
           🛒 Adicionar ao Carrinho
         </button>
       </div>
@@ -58,4 +68,5 @@
   <!-- Ajuste o caminho do script para voltar ao root -->
   <script src="scripts.js"></script>
 </body>
+
 </html>
