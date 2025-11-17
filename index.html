@@ -27,7 +27,6 @@
     </nav>
   </header>
 
-  <!-- Textos principais (fora do container de produtos) -->
   <section class="intro" id="home">
     <h1>Olá, seja bem-vindo à DarkWhite!</h1>
     <div class="intro-box">
@@ -38,7 +37,6 @@ Seu próximo par perfeito começa aqui.
 </h2>
 </div>
 </section>
-  <!-- Produtos -->
   <main class="container" id="produtos">
 
     <div class="card">
@@ -187,13 +185,11 @@ Seu próximo par perfeito começa aqui.
 
   </main>
 
-  <!-- Seção de Contato -->
   <section id="contato" class="contato">
     <h2>Entre em Contato</h2>
     <p>Tem alguma dúvida ou quer fazer um pedido personalizado? Fale com a gente!</p>
 
     <form class="contato-form" action="https://formsubmit.co/angelo.miguel.oliveira2007h@gmail.com" method="POST">
-      <!-- Proteções básicas -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://papaogamer.github.io/DarkWhite/obrigado.html">
 
@@ -219,46 +215,9 @@ Seu próximo par perfeito começa aqui.
     <div id="mensagem-toast" class="mensagem-toast" aria-live="polite"></div>
 
   </section>
-  <script>
-    // ================== MENU MOBILE ==================
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    if (hamburger && navLinks) {
-      hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-    }
 
-    // ================== CARRINHO ==================
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    function atualizarContador() {
-      const contador = document.getElementById('quantidade-carrinho');
-      if (contador) contador.textContent = carrinho.length;
-    }
-
-    function mostrarToast(texto, tipo = 'sucesso', duracao = 3000) {
-      const msg = document.getElementById('mensagem-toast');
-      if (!msg) return;
-      if (msg._timeoutId) clearTimeout(msg._timeoutId);
-
-      msg.textContent = texto;
-      msg.className = 'mensagem-toast ' + (tipo === 'sucesso' ? 'sucesso' : 'erro') + ' show';
-
-      msg._timeoutId = setTimeout(() => { msg.classList.remove('show'); }, duracao);
-    }
-
-    function adicionarAoCarrinho(nome, preco, imagem) {
-      carrinho.push({ nome, preco, imagem });
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      atualizarContador();
-      mostrarToast(`${nome} foi adicionado ao carrinho!`, 'sucesso', 3000);
-    }
-
-    document.addEventListener('DOMContentLoaded', atualizarContador);
-
-  </script>
-
+  <!-- Usa o mesmo scripts.js das demais páginas para comportamento consistente -->
+  <script src="scripts.js"></script>
 </body>
 
 </html>

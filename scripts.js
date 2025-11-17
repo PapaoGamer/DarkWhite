@@ -193,3 +193,4 @@ document.addEventListener("DOMContentLoaded", () => {
     img.addEventListener("click", () => trocarImagem(img.src));
   });
 });
+
