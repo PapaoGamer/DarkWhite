@@ -139,8 +139,8 @@ function finalizarCompra(numeroWhats = "5547996626904") {
 
   let descontoValor = 0;
   if (cupomAtivo === "DESCONTO10") descontoValor = subtotal * 0.1;
-  if (cupomAtivo === "PROMO25") descontoValor = subtotal * 0.25;
-  if (cupomAtivo === "BLACK50") descontoValor = subtotal * 0.5;
+  if (cupomAtivo === "") descontoValor = subtotal * 0.25;
+  if (cupomAtivo === "") descontoValor = subtotal * 0.5;
   let total = subtotal - descontoValor;
   if (total < 0) total = 0;
 
