@@ -24,16 +24,17 @@ body {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 10px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
 
+/* LOGO deslocada para direita */
 .logo-area {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 50px; /* ← ISSO AFASTA DA LOGO DO HAMBÚRGUER */
 }
 
 .logo-area img {
@@ -42,7 +43,7 @@ body {
 
 .logo-area h1 {
   font-size: 22px;
-  margin: 0;
+  margin: 1000;
 }
 
 h1 a {
@@ -59,40 +60,67 @@ h1 a:hover {
 
 /* LINKS DA NAVBAR */
 .nav-links {
-  display: flex;
-  gap: 40px;
+  position: absolute;
+  top: 70px;
+  right: -260px; 
+  width: 220px;
+  background: #222;
   padding: 20px;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 18px;
+  transition: right 0.3s ease;
+  display: flex;
+}
+
+.nav-links.active {
+  right: 15px;
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 10px 0;
 }
 
 .nav-links a {
   color: white;
+  font-size: 18px;
   text-decoration: none;
-  font-size: 16px;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
   color: #ddd;
-  transform: translateY(-3px);
+  transform: translateX(5px);
 }
 
 /* BOTÃO HAMBÚRGUER */
 .hamburger {
-  display: none;
+  display: block;
   font-size: 28px;
   cursor: pointer;
+  position: absolute; /* antes era fixed */
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* ===== LOGO FIXA ===== */
 .logo-fixa {
   position: fixed;
   top: 20px;
-  left: 20px;
-  width: 80px;
+  left: 1000px;
+  width: 1000px;
   height: auto;
   z-index: 1000;
   cursor: pointer;
   transition: transform 0.3s ease;
+  gap: 10px;
 }
 
 .logo-fixa:hover {
@@ -320,6 +348,57 @@ h1 a:hover {
   opacity: 0.9;
 }
 
+.faq-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background-color: #b0b0b0; /* cinza médio */
+    color: #000;
+    text-decoration: none;
+
+    padding: 14px 32px;
+    border-radius: 50px; /* formato cilíndrico */
+
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-button:hover {
+    transform: translateY(-6px); /* subidinha */
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+}
+
+.site-footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+.footer-btn {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 50px; /* cilíndrico */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-btn:hover {
+    background-color: #a1a0a0;
+    transform: translateY(-4px); /* subidinha */
+}
+
+.footer-separator {
+    margin: 0 6px;
+    color: #ffffff;
+}
+
 /* GALERIA DO PRODUTO (deixa aqui porque não é carrinho) */
 .card-galeria {
   background-color: white;
@@ -390,25 +469,45 @@ h1 a:hover {
   background: #3498db;
 }
 
+/* Ícone do carrinho na navbar */
+.cart-icon {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  background: #444;
+  padding: 8px 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin-right: 15px;
+  margin-left: auto;
+  padding-right: 10px;
+}
 
+.cart-icon:hover {
+  background: #555;
+}
 
+/*-----------------------------------------------------------------------------------------------------------
 /* RESPONSIVO MOBILE */
 @media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: -100%;
-    flex-direction: column;
-    background: #222;
-    width: 200px;
-    transition: 0.3s;
-    padding: 10px;
-    border-radius: 8px;
-  }
+.nav-links {
+  position: absolute;
+  top: 70px;
+  right: -250px;   /* escondido */
+  width: 220px;
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.3s ease;
+}
 
-  .nav-links.active {
-    right: 20px;
-  }
+
+.nav-links.active {
+  right: 15px;     /* aparece */
+}
+
 
   .hamburger {
     display: block;
@@ -417,6 +516,7 @@ h1 a:hover {
 
   .logo-area img {
     height: 35px;
+    margin-left: 35px;
   }
 
   .logo-area h1 {
@@ -478,5 +578,14 @@ h1 a:hover {
     justify-content: center;
     padding: 10px 0;
     align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

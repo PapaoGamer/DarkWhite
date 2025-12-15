@@ -78,7 +78,7 @@ h1 a:hover {
 }
 
 .hamburger {
-  display: none;
+  display: block;
   font-size: 28px;
   cursor: pointer;
 }
@@ -288,20 +288,22 @@ color: #f1c982;
 /* RESPONSIVO MOBILE */
 @media (max-width: 768px) {
   .nav-links {
-    position: absolute;
-    top: 70px;
-    right: -100%;
-    flex-direction: column;
-    background: #222;
-    width: 200px;
-    transition: 0.3s;
-    padding: 10px;
-    border-radius: 8px;
-  }
+  position: absolute;
+  top: 70px;
+  right: -250px;
+  width: 220px;
+  background: #222;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 8px;
+  gap: 15px;
+  transition: right 0.3s ease;
+}
 
-  .nav-links.active {
-    right: 20px;
-  }
+.nav-links.active {
+  right: 15px;
+}
+
 
   .hamburger {
     display: block;

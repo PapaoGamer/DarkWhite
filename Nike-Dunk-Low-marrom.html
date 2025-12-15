@@ -21,13 +21,20 @@
     <!-- Botão hambúrguer -->
     <div class="hamburger" id="hamburger">&#9776;</div>
 
-    <!-- Links da navbar (observe ../ para voltar ao root) -->
+    <!-- Links da navbar -->
     <nav class="nav-links" id="nav-links">
-      <a href="index.html#produtos">Produtos</a>
-      <a href="index.html#contato">Contato</a>
-      <a href="index.html#redes">Redes Sociais</a>
-      <a href="carrinho.html">🛒 Ver Carrinho (<span id="quantidade-carrinho">0</span>)</a>
-    </nav>
+  <ul>
+    <li><a href="index.html#produtos">Produtos</a></li>
+    <li><a href="index.html#contato">Contato</a></li>
+    <li><a href="index.html#redes">Redes Sociais</a></li>
+  </ul>
+</nav>
+
+
+    <a href="carrinho.html" class="cart-icon">
+  Carrinho 🛒 (<span id="quantidade-carrinho">0</span>)
+</a>
+
   </header>
 
   <main class="produto-pagina">
@@ -57,11 +64,11 @@
         <h1>Nike Dunk Low</h1>
         <p>Cor: Marrom</p>
         <p>Tamanhos: 34 - 43</p>
-        <span class="preco">R$: 155,00</span>
+        <span class="preco">R$: 150,00</span>
 
         <!-- Botão -->
         <button class="comprar"
-          onclick="adicionarAoCarrinho('Nike Dunk Low Marrom',155.00,'https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png')">
+          onclick="adicionarAoCarrinho('Nike Dunk Low Marrom',150.00,'https://i.postimg.cc/R0fjbmy7/imagem-2025-11-15-225512043.png')">
           🛒 Adicionar ao Carrinho
         </button>
 
