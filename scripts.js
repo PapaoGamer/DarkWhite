@@ -193,3 +193,8 @@ document.getElementById("hamburger").addEventListener("click", () => {
     img.addEventListener("click", () => trocarImagem(img.src));
   });
 });
+
+function scrollCarousel(btn, dir) {
+  const row = btn.closest('.carousel').querySelector('.cards-row');
+  row.scrollLeft += dir * 300;
+}

@@ -108,5 +108,7 @@ function mostrarToast(texto, tipo = "sucesso", duracao = 3000) {
   }, duracao);
 }
 
+
+
 // Inicializa
 atualizarCarrinho();
