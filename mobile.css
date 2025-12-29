@@ -1,0 +1,183 @@
+/* Mobile overrides para DarkWhite - carregar APÓS os outros CSS (style.css / produtos.css / carrinho.css) */
+
+/* Variáveis */
+:root{
+  --nav-height: 70px;
+  --brand-size: 40px;
+  --gap-sm: 12px;
+  --page-padding: 16px;
+  --bg-dark: #222;
+}
+
+/* Regras globais para mobile */
+@media (max-width: 768px) {
+
+  /* Navbar: altura fixa e padding consistente */
+  .navbar{
+    height: var(--nav-height);
+    padding: 8px 14px;
+    align-items: center;
+  }
+
+  /* Garante espaço correto no topo da página (navbar fixa) */
+  body{
+    padding-top: var(--nav-height);
+  }
+
+  /* Logo e título: remover margens enormes */
+  .logo-area{
+    margin-left: 8px !important;
+    gap: 8px !important;
+    align-items: center;
+  }
+  .logo-area img{
+    height: var(--brand-size) !important;
+    width: auto;
+  }
+  .logo-area h1{
+    font-size: 18px !important;
+    margin: 0 !important;
+  }
+  .logo-area h1 a{
+    line-height: 1;
+  }
+
+  /* Botão hambúrguer e ícone do carrinho posicionados e acessíveis */
+  .hamburger{
+    position: absolute !important;
+    left: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1500;
+    font-size: 26px !important;
+  }
+  .cart-icon{
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin-right: 0 !important;
+    z-index: 1500;
+  }
+
+  /* Menu mobile: overlay full-width deslizando de cima */
+  .nav-links{
+    position: fixed !important;
+    top: var(--nav-height) !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(100vh - var(--nav-height)) !important;
+    width: 100% !important;
+    background: rgba(10,10,10,0.98) !important;
+    padding: 24px 18px !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    transform: translateY(-100%) !important;
+    transition: transform 0.35s ease !important;
+    z-index: 1400 !important;
+  }
+  .nav-links.active{
+    transform: translateY(0) !important;
+  }
+  .nav-links ul{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding-left: 0 !important;
+  }
+  .nav-links a{
+    color: #fff !important;
+    font-size: 18px !important;
+    padding: 10px 0 !important;
+  }
+
+  /* Oculta logo-fixa (posições fixas mal definidas no CSS atual) */
+  .logo-fixa { display: none !important; }
+
+  /* Layout dos cards / container */
+  .container, .intro-box, .card-fundo {
+    width: calc(100% - (var(--page-padding) * 2)) !important;
+    margin: 14px auto !important;
+    padding: 14px !important;
+    box-sizing: border-box;
+  }
+  .card, .card-galeria {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Imagens e galeria */
+  .card-imagem {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1; /* preserva espaço visual */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+  .card-imagem img, .imagem-principal {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Miniaturas: scroll horizontal e tamanho reduzido */
+  .miniaturas {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 8px !important;
+    padding: 6px 0 !important;
+  }
+  .miniaturas img {
+    width: 56px !important;
+    height: 56px !important;
+    flex: 0 0 auto !important;
+    border-radius: 8px !important;
+  }
+
+  /* Botões maiores e full-width quando apropriado */
+  .comprar, .finalizar, .voltar {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+
+  /* Carrinho e resumo */
+  .carrinho {
+    width: calc(100% - 32px) !important;
+    margin: 12px auto !important;
+    padding: 18px !important;
+  }
+  .item {
+    gap: 12px !important;
+  }
+
+  /* Toasts e mensagens */
+  .mensagem-toast {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    max-width: calc(100% - 24px) !important;
+  }
+}
+
+/* Ajustes mais finos para telas muito pequenas */
+@media (max-width: 480px) {
+  :root { --brand-size: 34px; }
+
+  .logo-area img { height: var(--brand-size) !important; }
+  .nav-links a { font-size: 17px !important; }
+  .miniaturas img { width: 48px !important; height: 48px !important; }
+  .preco { font-size: 18px !important; font-weight: 700 !important; }
+  .intro h1 { font-size: 20px !important; }
+  .intro-box h2 { font-size: 16px !important; line-height: 1.4 !important; padding: 8px !important; }
+}
+
+/* Fim do mobile.css */
