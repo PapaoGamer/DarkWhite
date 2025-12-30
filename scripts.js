@@ -195,6 +195,18 @@ document.getElementById("hamburger").addEventListener("click", () => {
 });
 
 function scrollCarousel(btn, dir) {
-  const row = btn.closest('.carousel').querySelector('.cards-row');
-  row.scrollLeft += dir * 300;
+  const carousel = btn.closest('.carousel');
+  const row = carousel.querySelector('.cards-row');
+  const card = row.querySelector('.card');
+
+  if (!card) return;
+
+  const style = window.getComputedStyle(card);
+  const gap = parseInt(window.getComputedStyle(row).gap) || 18;
+  const cardWidth = card.offsetWidth + gap;
+
+  row.scrollBy({
+    left: dir * cardWidth,
+    behavior: "smooth"
+  });
 }
