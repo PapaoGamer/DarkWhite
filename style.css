@@ -1,9 +1,12 @@
 /* =========================
-   DarkWhite — style.css (COMPLETO)
+   DarkWhite — style.css (ORGANIZED)
    Objetivo: cards UNIFORMES em todos dispositivos
+   Arquivo reorganizado para legibilidade e manutenção
    ========================= */
 
-/* ===== RESET / GLOBAL ===== */
+/* =========================
+   1) RESET / GLOBAL
+   ========================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
@@ -11,8 +14,8 @@ body {
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background-color: #8b8b8b;
   color: #222;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -20,7 +23,14 @@ body {
   line-height: 1.35;
 }
 
-/* ===== THEME / SIZE VARIABLES ===== */
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* =========================
+   2) THEME VARIABLES
+   ========================= */
 :root{
   --bg-body: #8b8b8b;
   --nav-bg: #333;
@@ -32,13 +42,11 @@ body {
   --card-shadow-hover: 0 10px 22px rgba(0,0,0,0.18);
   --muted: #6f6f6f;
 
-  /* Unified card sizing (altere aqui para redimensionar todos os cards) */
+  /* Unified card sizing (mude aqui para alterar globalmente) */
   --card-desktop-w: 230px;
-  --card-desktop-h: 380px;
   --card-desktop-img-h: 140px;
 
   --card-tablet-w: 200px;
-  --card-tablet-h: 350px;
   --card-tablet-img-h: 130px;
 
   --card-mobile-w: 150px;
@@ -48,12 +56,9 @@ body {
   --gap-carousel: 18px;
 }
 
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
-}
-
-/* ===== NAVBAR ===== */
+/* =========================
+   3) NAVBAR
+   ========================= */
 .navbar {
   position: fixed;
   top: 0; left: 0;
@@ -68,98 +73,134 @@ body {
   z-index: 1000;
 }
 
-/* logo area */
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-left: 50px; /* mantido conforme seu layout */
 }
-.logo-area img{ height:45px; display:block; }
-.logo-area h1{ font-size:20px; margin:0; }
-.logo-area a{ color:var(--nav-contrast); text-decoration:none; }
+.logo-area img { height: 45px; display: block; }
+.logo-area h1 { font-size: 20px; margin: 0; }
+.logo-area a { color: var(--nav-contrast); text-decoration: none; }
 
-/* hamburger */
-.hamburger{ position:absolute; left:15px; top:50%; transform:translateY(-50%); font-size:28px; cursor:pointer; }
+.hamburger {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  cursor: pointer;
+}
 
-/* nav-links (mobile dropdown) */
-.nav-links{
-  position:absolute;
-  top:70px;
-  right:-260px;
-  width:220px;
-  background:#222;
-  padding:16px;
-  border-radius:10px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+/* Mobile dropdown nav */
+.nav-links {
+  position: absolute;
+  top: 70px;
+  right: -260px;
+  width: 220px;
+  background: #222;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   transition: right .28s ease;
 }
-.nav-links.active{ right:15px; }
-.nav-links ul{ list-style:none; padding:0; margin:0; }
-.nav-links li{ margin:6px 0; }
-.nav-links a{ color:#fff; text-decoration:none; font-size:16px; }
-.nav-links a:hover{ color:#ddd; transform:translateX(4px); }
+.nav-links.active { right: 15px; }
+.nav-links ul { list-style: none; padding: 0; margin: 0; }
+.nav-links li { margin: 6px 0; }
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+.nav-links a:hover { color: #ddd; transform: translateX(4px); }
 
 /* cart icon */
-.cart-icon{
-  margin-left:auto;
-  margin-right:8px;
-  background:#444;
-  color:#fff;
-  padding:8px 12px;
-  border-radius:10px;
-  text-decoration:none;
+.cart-icon {
+  margin-left: auto;
+  margin-right: 8px;
+  background: #444;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
 }
-.cart-icon:hover{ background:#555; }
+.cart-icon:hover { background: #555; }
 
-/* ===== INTRO ===== */
-.intro{ text-align:center; margin: 20px 10px 10px; }
-.intro h1{ font-size:28px; margin:0; color:#fff; }
-.intro .intro-box h2{ font-size:18px; color:#f5f5f5; font-weight:400; margin:12px 0 0; }
+/* =========================
+   4) INTRO / HERO
+   ========================= */
+.intro { text-align: center; margin: 20px 10px 10px; }
+.intro h1 { font-size: 28px; margin: 0; color: #fff; }
+.intro .intro-box h2 {
+  font-size: 18px;
+  color: #f5f5f5;
+  font-weight: 400;
+  margin: 12px 0 0;
+}
 
-/* ===== VITRINES / CATEGORIAS ===== */
-.vitrines{ padding: 30px 14px; width:100%; max-width:1200px; margin: 0 auto 40px; }
+/* =========================
+   5) VITRINES / CATEGORIAS
+   ========================= */
+.vitrines {
+  padding: 30px 14px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
 
-/* category header */
-.categoria{ margin-bottom:48px; }
-.categoria h2{ margin:0 0 8px 6px; color:#fff; font-size:20px; }
+.categoria {
+  margin-bottom: 48px;
+}
+.categoria h2 {
+  margin: 0 0 8px 6px;
+  color: #fff;
+  font-size: 20px;
+}
 
-/* carousel container */
-.carousel{
-  position:relative;
-  width:100%;
-  overflow:hidden;
+/* =========================
+   6) CAROUSEL: LAYOUT & FADE EDGES
+   ========================= */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
   padding: 0 44px; /* espaço para setas */
 }
 
-/* left/right gradient fade edges (optional) */
+/* Fade edges */
 .carousel::before,
-.carousel::after{
-  content:"";
-  position:absolute; top:0; bottom:0; width:56px; pointer-events:none; z-index:5;
+.carousel::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 56px;
+  pointer-events: none;
+  z-index: 5;
 }
-.carousel::before{ left:0; background: linear-gradient(to right, var(--bg-body) 0%, transparent 100%); }
-.carousel::after{ right:0; background: linear-gradient(to left, var(--bg-body) 0%, transparent 100%); }
+.carousel::before { left: 0; background: linear-gradient(to right, var(--bg-body) 0%, transparent 100%); }
+.carousel::after  { right: 0; background: linear-gradient(to left,  var(--bg-body) 0%, transparent 100%); }
 
-/* cards-row: horizontal scroller with snap */
-.cards-row{
-  display:flex;
-  gap:var(--gap-carousel);
-  padding:18px 6px;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  scroll-snap-type:x proximity;
-  align-items:flex-start;
+/* Horizontal scroller */
+.cards-row {
+  display: flex;
+  gap: var(--gap-carousel);
+  padding: 18px 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  align-items: flex-start;
+  position: relative;
+  z-index: 4;
 }
-.cards-row::-webkit-scrollbar{ display:none; }
+.cards-row::-webkit-scrollbar { display: none; }
 
-/* ===== CARD: UNIFORM SIZING (APPLIED TO ALL .card) =====
-   All product cards will keep identical width and height regardless of content.
-   To resize globally, change the --card-*-* variables above.
-*/
-.cards-row .card{
+/* =========================
+   7) CARD: UNIFORM SIZING & CONTENT
+   ========================= */
+/* Base uniform card inside carousel */
+.cards-row .card {
   flex: 0 0 var(--card-tablet-w);
   width: var(--card-tablet-w);
   height: var(--card-tablet-h);
@@ -167,47 +208,48 @@ body {
   border-radius: 14px;
   padding: 12px;
   box-shadow: var(--card-shadow);
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  text-align:center;
-  scroll-snap-align:center;
-  overflow: hidden;             /* ensure overflow doesn't change height */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  scroll-snap-align: center;
+  overflow: hidden;             /* prevent content pushing height */
   position: relative;
   transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s ease;
   box-sizing: border-box;
+  z-index: 5; /* ensure cards sit above fade edges */
 }
 
-/* Hover lift on non-touch devices */
-@media (hover:hover) and (pointer:fine){
-  .cards-row .card:hover{
+/* Hover lift (desktop only) */
+@media (hover:hover) and (pointer:fine) {
+  .cards-row .card:hover {
     transform: translateY(-6px);
     box-shadow: var(--card-shadow-hover);
   }
 }
 
-/* Image area: fixed height to preserve card uniformity */
-.cards-row .card img{
+/* Image area fixed height to preserve uniformity */
+.cards-row .card img {
   width: 100%;
   height: var(--card-tablet-img-h);
-  object-fit: cover;    /* crop consistently */
+  object-fit: cover;
   border-radius: 10px;
-  display:block;
-  margin:0 auto;
-  background:#f6f6f6;
+  display: block;
+  margin: 0 auto;
+  background: #f6f6f6;
   flex-shrink: 0;
 }
 
-/* Titles and texts — clamp lines to keep layout identical */
+/* Titles: clamp to 2 lines */
 .cards-row .card h2,
 .cards-row .card h3,
-.cards-row .card .card-title{
+.cards-row .card .card-title {
   margin: 6px 0 0;
   font-size: 1rem;
   color: #111;
   font-weight: 600;
   line-height: 1.15;
-  max-height: 2.3em;                 /* approx 2 lines */
+  max-height: 2.3em; /* ~2 lines */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -216,9 +258,10 @@ body {
   white-space: normal;
 }
 
+/* Secondary text: clamp */
 .cards-row .card p,
 .cards-row .card .card-sub,
-.cards-row .card .card-attrs{
+.cards-row .card .card-attrs {
   margin: 4px 0 0;
   font-size: 13px;
   color: var(--muted);
@@ -231,174 +274,204 @@ body {
   -webkit-box-orient: vertical;
 }
 
-/* price + buy area anchored at bottom */
-.cards-row .card .preco{
+/* Price + buy anchored at bottom */
+.cards-row .card .preco {
   color: var(--accent);
-  font-weight:700;
-  font-size:1rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
-.cards-row .card .card-bottom{
-  margin-top:auto;
-  display:flex;
-  gap:10px;
-  align-items:center;
-  justify-content:space-between;
-}
-
-/* uniform buy button */
-.cards-row .card .comprar{
-  background:var(--accent);
-  color:#fff;
-  padding:8px 10px;
-  border-radius:9px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:0.9rem;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
-}
-.cards-row .card .comprar:active{ transform: translateY(1px); }
-.cards-row .card .comprar:hover{ filter:brightness(.95); }
-
-/* legacy .card rules replaced/kept for compatibility */
-.card {
-  /* fallback uniform sizing if .card used outside .cards-row */
-  box-sizing: border-box;
+.cards-row .card .card-bottom {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* ===== GRID fallback (if you switch to grid view) ===== */
-.product-grid{
-  display:grid;
-  gap:14px;
-  grid-template-columns: repeat(2, 1fr);
-  padding:12px;
+/* Uniform buy button */
+.cards-row .card .comprar {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
-@media(min-width:900px){ .product-grid{ grid-template-columns: repeat(3, 1fr); } }
+.cards-row .card .comprar:active { transform: translateY(1px); }
+.cards-row .card .comprar:hover { filter: brightness(.95); }
 
-/* ===== CAROUSEL ARROWS ===== */
-.carousel .arrow{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:44px; height:44px;
-  border-radius:50%;
-  background:#111; color:#fff;
-  display:flex; align-items:center; justify-content:center;
-  font-size:22px; border:none; cursor:pointer; z-index:6; opacity:.95;
+/* Fallback for standalone .card usage */
+.card { box-sizing: border-box; }
+
+/* =========================
+   8) CAROUSEL ARROWS
+   ========================= */
+.carousel .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #111; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; border: none; cursor: pointer; z-index: 6; opacity: .95;
   transition: transform .12s ease, background .12s ease;
 }
-.carousel .arrow.left{ left:6px; }
-.carousel .arrow.right{ right:6px; }
-.carousel .arrow:hover{ background:var(--accent); transform:translateY(-50%) scale(1.04); }
+.carousel .arrow.left  { left: 6px; }
+.carousel .arrow.right { right: 6px; }
+.carousel .arrow:hover { background: var(--accent); transform: translateY(-50%) scale(1.04); }
 
-/* ===== RESPONSIVE OVERRIDES ===== */
+/* =========================
+   9) RESPONSIVE OVERRIDES
+   Grouped by breakpoints for easier maintenance
+   ========================= */
 
 /* Desktop widescreen */
-@media (min-width:1100px){
-  .cards-row .card{
+@media (min-width: 1100px) {
+  .cards-row .card {
     width: var(--card-desktop-w);
     min-width: var(--card-desktop-w);
     height: var(--card-desktop-h);
   }
-  .cards-row .card img{ height: var(--card-desktop-img-h); }
+  .cards-row .card img { height: var(--card-desktop-img-h); }
 }
 
 /* Tablet / small laptop */
-@media (min-width:720px) and (max-width:1099px){
-  .cards-row .card{
+@media (min-width: 720px) and (max-width: 1099px) {
+  .cards-row .card {
     width: var(--card-tablet-w);
     min-width: var(--card-tablet-w);
     height: var(--card-tablet-h);
   }
-  .cards-row .card img{ height: var(--card-tablet-img-h); }
+  .cards-row .card img { height: var(--card-tablet-img-h); }
 }
 
 /* Mobile */
-@media (max-width:719px){
-  .carousel{ padding: 0 14px; }
-  .cards-row{ gap:12px; padding:12px 4px; }
-  .cards-row .card{
+@media (max-width: 719px) {
+  .carousel { padding: 0 14px; }
+  .cards-row { gap: 12px; padding: 12px 4px; }
+
+  .cards-row .card {
     width: var(--card-mobile-w);
     min-width: var(--card-mobile-w);
     height: var(--card-mobile-h);
-    padding:10px;
-    border-radius:12px;
+    padding: 10px;
+    border-radius: 12px;
   }
-  .cards-row .card img{ height: var(--card-mobile-img-h); border-radius:9px; }
-  .cards-row .card h2{ font-size:0.94rem; -webkit-line-clamp:2; }
-  .cards-row .card p{ font-size:12px; -webkit-line-clamp:2; }
-  .carousel .arrow{ width:40px; height:40px; font-size:20px; }
+  .cards-row .card img { height: var(--card-mobile-img-h); border-radius: 9px; }
+  .cards-row .card h2 { font-size: 0.94rem; -webkit-line-clamp: 2; }
+  .cards-row .card p { font-size: 12px; -webkit-line-clamp: 2; }
+
+  .carousel .arrow { width: 40px; height: 40px; font-size: 20px; }
 }
 
 /* Very small narrow screens */
-@media (max-width:420px){
-  .cards-row .card{ width: calc(var(--card-mobile-w) - 8px); min-width: calc(var(--card-mobile-w) - 8px); }
-  .cards-row .card img{ height: calc(var(--card-mobile-img-h) - 6px); }
+@media (max-width: 420px) {
+  .cards-row .card { width: calc(var(--card-mobile-w) - 8px); min-width: calc(var(--card-mobile-w) - 8px); }
+  .cards-row .card img { height: calc(var(--card-mobile-img-h) - 6px); }
 }
 
-/* ===== CONTACT / FORM ===== */
-.contato{
-  background:#f9f9f9; padding:48px 18px; text-align:center; border-top:3px solid #333;
+/* =========================
+   10) CONTACT / FORM
+   ========================= */
+.contato {
+  background: #f9f9f9;
+  padding: 48px 18px;
+  text-align: center;
+  border-top: 3px solid #333;
 }
-.contato h2{ font-size:24px; color:#333; margin-bottom:8px; }
-.contato p{ color:#555; margin-bottom:18px; }
-.contato-form{ max-width:520px; margin:18px auto 0; display:flex; flex-direction:column; gap:12px; }
-.contato-form input, .contato-form textarea{
-  width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:15px;
-}
-.contato-form input:focus, .contato-form textarea:focus{
-  outline:none; border-color:var(--accent); box-shadow:0 0 6px rgba(39,174,96,0.18);
-}
-.enviar{ background: var(--accent); color:#fff; padding:12px; border-radius:8px; border:none; cursor:pointer; }
-.enviar:hover{ filter:brightness(.96); }
+.contato h2 { font-size: 24px; color: #333; margin-bottom: 8px; }
+.contato p  { color: #555; margin-bottom: 18px; }
 
-/* ===== SOCIAL / FOOTER ===== */
-.social-links{ text-align:center; margin:28px 0 80px; color:#fff; }
-.social-buttons{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-.social-buttons a{ color:#fff; padding:10px 18px; border-radius:40px; text-decoration:none; font-weight:600; }
-.whatsapp-btn{ background:#25D366; }
-.instagram-btn{ background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); }
+.contato-form {
+  max-width: 520px;
+  margin: 18px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+.contato-form input:focus,
+.contato-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(39,174,96,0.18);
+}
+.enviar {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.enviar:hover { filter: brightness(.96); }
 
-/* FAQ button (fixed) */
-.faq-button{
-  position: fixed; bottom:20px; right:20px;
-  background-color:#b0b0b0; color:#000; text-decoration:none;
-  padding:14px 32px; border-radius:50px; font-weight:bold; box-shadow:0 6px 12px rgba(0,0,0,0.2);
+/* =========================
+   11) SOCIAL / FOOTER
+   ========================= */
+.social-links { text-align: center; margin: 28px 0 80px; color: #fff; }
+.social-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.social-buttons a { color: #fff; padding: 10px 18px; border-radius: 40px; text-decoration: none; font-weight: 600; }
+.whatsapp-btn { background: #25D366; }
+.instagram-btn { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); }
+
+.faq-button {
+  position: fixed; bottom: 20px; right: 20px;
+  background-color: #b0b0b0; color: #000; text-decoration: none;
+  padding: 14px 32px; border-radius: 50px; font-weight: bold; box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   transition: transform .3s ease, box-shadow .3s ease;
 }
-.faq-button:hover{ transform:translateY(-6px); box-shadow:0 10px 18px rgba(0,0,0,0.3); }
+.faq-button:hover { transform: translateY(-6px); box-shadow: 0 10px 18px rgba(0,0,0,0.3); }
 
-/* site footer links */
-.site-footer{ width:100%; padding:20px 0; text-align:center; font-size:14px; color:#777; }
-.footer-btn{ color:#ffffff; text-decoration:none; padding:6px 16px; border-radius:50px; }
-.footer-btn:hover{ background-color:#a1a0a0; transform:translateY(-4px); }
+.site-footer { width: 100%; padding: 20px 0; text-align: center; font-size: 14px; color: #777; }
+.footer-btn { color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 50px; }
+.footer-btn:hover { background-color: #a1a0a0; transform: translateY(-4px); }
 
-/* ===== MINIATURAS / MISC ===== */
-.miniaturas{ display:flex; justify-content:center; gap:10px; margin:10px 0; }
-.miniaturas img{ width:60px; cursor:pointer; border-radius:5px; transition: border .3s ease; }
-.miniaturas img:hover{ border:2px solid var(--accent); }
+/* =========================
+   12) MINIATURAS / MISC / TOAST
+   ========================= */
+.miniaturas { display: flex; justify-content: center; gap: 10px; margin: 10px 0; }
+.miniaturas img { width: 60px; cursor: pointer; border-radius: 5px; transition: border .3s ease; }
+.miniaturas img:hover { border: 2px solid var(--accent); }
 
-/* mensagem toast */
-.mensagem-toast{
-  position:fixed; right:20px; bottom:20px;
-  background:var(--accent); color:#fff; padding:10px 14px; border-radius:8px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.18); z-index:9999; transform:translateY(12px); opacity:0;
-  pointer-events:none; transition: opacity .28s, transform .28s;
+.mensagem-toast {
+  position: fixed; right: 20px; bottom: 20px;
+  background: var(--accent); color: #fff; padding: 10px 14px; border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18); z-index: 9999; transform: translateY(12px); opacity: 0;
+  pointer-events: none; transition: opacity .28s, transform .28s;
 }
-.mensagem-toast.show{ opacity:1; transform:none; pointer-events:auto; }
+.mensagem-toast.show { opacity: 1; transform: none; pointer-events: auto; }
 
-/* small helpers */
-.hidden{ display:none !important; }
-.center{ display:flex; align-items:center; justify-content:center; }
+/* =========================
+   13) HELPERS / LEGACY / COMPAT
+   ========================= */
+.hidden { display: none !important; }
+.center { display: flex; align-items: center; justify-content: center; }
 
-/* ===== COMPAT / LEGACY CSS (kept for backward compatibility) ===== */
-/* If your HTML references classes like .container, .product-page-container, keep reasonable defaults */
-.container{ display:grid; grid-template-columns: repeat(3, 1fr); gap:30px; padding:40px; justify-items:center; background:#7e7e7e; border-radius:12px; margin:20px auto; }
-.product-page-container{ display:flex; justify-content:center; align-items:flex-start; padding:40px 0; }
-
-/* Provide a fallback .card rules for pages that expect the old sizes (these won't override .cards-row .card) */
-.card { box-sizing:border-box; }
+/* Legacy helpers kept for backward compatibility */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+  justify-items: center;
+  background: #7e7e7e;
+  border-radius: 12px;
+  margin: 20px auto;
+}
+.product-page-container { display: flex; justify-content: center; align-items: flex-start; padding: 40px 0; }
 
 /* End of file */
